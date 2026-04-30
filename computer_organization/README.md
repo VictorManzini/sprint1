@@ -14,7 +14,7 @@ Versões:
 
 Mark0.1-beta:
 Simulação símples, com apenas 3 componentes, ESP32, Relé, potenciômetro. 
-Modo de funcionamento: O potenciômetro envia o valor para o ESP32, valores de 0 a 4093. O ESP32
+Modo de funcionamento: O potenciômetro envia o valor para o ESP32, valores de 0 a 4095. O ESP32
 lê os valores avalia, se o valor recebido for maior que 2047, o ESP32 envia um input para o relé abrir e não 
 deixar o valor seguir a diante; se o valor for menor que 2047, o ESP32 envia um inpt para o relé fechar e deixar o valor seguir.
 O que precisa melhorar: O uso do potenciômetro impossibilita o uso de valores reais de corrente e tensão,
@@ -27,3 +27,8 @@ Data de fim da versão: Mark0.1-beta encerrada 26/04/2026.
 
 Mark1-beta:
 Início: 27/04/2026
+Modo de funcionamento: Lógica de funcionamento igual a Mark0.1-beta, agora dois potenciômetros que enviam os valores para o ESP32. O ESP32
+lê os valores avalia, se o valor de corrente recebido for maior que 2047, o ESP32 envia um input para o relé abrir e não deixar o valor seguir a diante; se o valor for menor que 2047, o ESP32 envia um inpt para o relé fechar e deixar o valor seguir. O código sofreu algumas adições, como por exemplo, as linhas de print do display de OLED, que também foi adicionado nesta versão. 
+Foi adicionado o display de OLED que exibe as informações sobre a corrente, tensão e a potência utilizada. Um problema que vale ressaltar, a configuração atual da Mark1-beta não fecha o relé se a tensão for maior do que a esperada, isso é algo que devo implementar na próxima versão Mark1.2-beta. 
+Notas: Algumas dificuldades foram notáveis no uso do Wokwi. O programa demora muito para compilar o código e fazer a simulação quando o servidor está carregado. 
+Data de fim da versão: Mark1-beta 30/04/2026. 
