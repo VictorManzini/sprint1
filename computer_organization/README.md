@@ -32,3 +32,5 @@ lê os valores avalia, se o valor de corrente recebido for maior que 2047, o ESP
 Foi adicionado o display de OLED que exibe as informações sobre a corrente, tensão e a potência utilizada. Um problema que vale ressaltar, a configuração atual da Mark1-beta não fecha o relé se a tensão for maior do que a esperada, isso é algo que devo implementar na próxima versão Mark1.2-beta. 
 Notas: Algumas dificuldades foram notáveis no uso do Wokwi. O programa demora muito para compilar o código e fazer a simulação quando o servidor está carregado. 
 Data de fim da versão: Mark1-beta 30/04/2026. 
+
+NOTA GERAL: Interessatne adicionar um sensor de presença onde o veículo está estacionado. Quando o carregamento chegar ao fim, um aviso será enviado ao usuário pelo app da empresa fabricante do carregador, se o motorista/usuário não retirar o veículo em 10 min, será aplicada uma multa de xR$ pelo uso da vaga. Se o carro estiver na vaga mas não estiver carregando, ele está tomando o lugar de outro carro que precisa ser carregado, logo, está dando prejuízo para a empresa.
