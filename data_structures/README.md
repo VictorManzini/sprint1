@@ -1,89 +1,34 @@
-Sprint 1 — Simulador de Sessão de Recarga em C
+Explicação da lógica do programa:
+1- Objetivo, o que o programa faz: 
+O objetivo do programa é simular uma recarga de carros elétricos.
 
-Construir um programa em C que simule:
+Instruções:
+O executavel que está junto com o código fonte é um executavel do MacOS, não funciona para windows.
+Para executar o programa no windows é necessário compilar o arquivo ev_chargers.c.
 
-Início e fim de sessão de recarga
-Controle básico de energia
-Registro de dados da sessão
-Aplicação de regras simples de cobrança
 
-Entregáveis obrigatórios
+2- Fluxo Geral: 
+Menu():
+ Imprime algumas informações necessárias para o início do programa e guarda o usuário e senha, mesmo que fictícios por enquanto;
 
-Código em C (compilável e executável)
-Execução no terminal (com entrada de dados)
-Saída formatada mostrando o resultado da sessão
-Documento explicando a lógica
+capacidade():
+ verifica se a energia e o carregador estão conectados via validação do usuário. Loop interno com árvore de decisao, se o usuário digitar 2 para a energia ou para o carregador, o loop volta e verifica novamente até energia e carregador serem 1. Se for digitado algum número menor que 1 ou maior que 2, o programa exibe erro e volta para o começo do loop. 
 
-Critérios de Avaliação (0–100)
+battery():
+ aguarda o input da porcentagem da bateria do carro e verifica se ela é real, ou seja, entre 0% a 100%. A função battery() também verifica a potência da bateria do carro perguntando para o usuário se ele deseja inserir a potência ou deixar o sistema escolher automaticamente, por padrão a potência da bateria ,se o usuário não informar, é de 38.8kWh     que é o padrão em carros elétricos pequenos como o BYD Dolphin Mini;
 
-1. Uso correto de estruturas condicionais (if / else / switch) (0–20)
+potencia():
+ decide em qual modo de carregamento a simulação vai rodar. Existem dois modos, baseado nos reais, carregamento lento, onde usa corrente alternada e tem potência de 7.4kW e carregamento rápido, onde usa corente contínua e tem potência de 50.0kW. A decisão do usuário impacta diretamente no quanto o carregador consumirá de energia, impactando também no custo da operação;
+ 
+sessao():
+ grava a data, com dia da semana, dia, mês e ano e o horário em que a sessão de carregamento começa. 
+ Além disso a função calcula uma previsão de quanto tempo a sessão irá durar. As informações que a função sessao() grava são fundamentais para o cálculo de custo, calculando quanto tempo a sessão durou e qual foi a janela de horário que a sessão foi executada;
 
-(0–5) Uso incorreto ou ausente
-(6–10) Uso básico com erros
-(11–15) Uso correto
-(16–20) Uso organizado e bem estruturado
+tarifa():
+ antes mesmo de a sessão rodar, o preço que o usuário irá pagar já  foi calculado com as informações que foram geradas pelas funções anteriores. Também ela analisa quando a sessão foi iniciada, se foi em um horário de pico, onde o preço do kWh sobe, se está em um horário intermediário, onde a tarifa costuma ser mais barata do que no horario de pico porém mais cara que o horário fora de ponta e se está em um horário fora de ponta. Eu calculei isso com base nos preços da ENEL de São Paulo capital, os dados de horários que podem ser encontrados na função tarifa() são os horários reais em que a nossa energia custa mais ou menos no dia a dia;
 
-Esperado:
+simulacao():
+ como o nome já diz, ela simula a recarga, ela pega a porcentagem da bateria inicial e por meio das variáveis já definidas em funções anteriores, recarrega a bateria do veículo com base na capacidade máxima da bateria(100%) e o quanto de bateria tem no veículo;
 
-Decisão de tarifação
-Validação de dados
-
-2. Uso de estruturas de repetição (for, while, do-while) (0–20)
-
-(0–5) Não utilizado corretamente
-(6–10) Uso básico
-(11–15) Uso funcional
-(16–20) Uso adequado com controle correto de fluxo
-
-Exemplo:
-
-Simular tempo de recarga
-Repetir entrada até válida
-
-3. Lógica da Sessão de Recarga (0–20)
-
-(0–5) Incompleta
-(6–10) Parcial
-(11–15) Funcional
-(16–20) Completa e coerente
-
-Deve conter:
-
-Início da sessão
-Tempo de recarga
-Energia consumida (simulada)
-
-4. Cálculo de Tarifação (0–15)
-
-(0–5) Não implementado
-(6–10) Cálculo simples
-(11–13) Cálculo correto
-(14–15) Regras diferenciadas (ex: horário, tipo de usuário)
-
-5. Organização do Código (0–15)
-
-(0–5) Desorganizado
-(6–10) Parcialmente organizado
-(11–13) Organizado
-(14–15) Muito bem estruturado
-
-Avaliar:
-
-Clareza
-Nomes de variáveis
-Separação lógica
-
-6. Entrada e Saída de Dados (0–10)
-
-(0–3) Confusa
-(4–6) Funcional
-(7–8) Clara
-(9–10) Bem formatada (tipo sistema real)
-
-Resultado esperado do Sprint 1
-
-Um programa que:
-
-Simula uma recarga
-Calcula custo
-Exibe relatório simples
+final():
+ exibe um relatório final com data, horario de início da sessão e horario de fim da sessão, kWh consumido, preço e qual o tipo da tarifa que foi cobrada.
