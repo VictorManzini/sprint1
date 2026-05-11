@@ -1,0 +1,3 @@
+Como o protótipo Mark-1 pode ser implementada ao projeto do Challenge para proteger o sistema de carga de carros elétricos?
+Modo de funcionamento: Os dois potenciômetros servem para liberar corrente e tensão simulada (o Wokwi, nem outros simuladores tem sensores de efeito Hall nem sensores de tensão disponíveis para uso). O valor de tensão e corrente são recebidos pelo ESP32 que verifica o nível de cada um. Em um cenário onde a corrente passa de X (no caso do protótipo a corrente máxima selecionada foi selecionada em 25A) o relé abre e não permite energia passar, previnindo uma sobregarga no sistema de carregamento ou um curto circuito. 
+A corrente pode ser ajustada conforme a potência do carregador. 
