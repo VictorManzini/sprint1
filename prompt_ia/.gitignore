@@ -1,0 +1,205 @@
+# =============================================================================
+# GENERAL
+# =============================================================================
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.iml
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =============================================================================
+# SECRETS & SENSITIVE FILES — never commit these
+# =============================================================================
+
+.env
+.env.*
+!.env.example        # allow the example template
+*.pem
+*.key
+*.p12
+*.pfx
+*.cert
+*.crt
+secrets/
+secrets.json
+secrets.yaml
+secrets.yml
+config/secrets.*
+credentials.json
+service-account*.json
+*_rsa
+*_rsa.pub
+*_dsa
+*_ed25519
+*_ecdsa
+.netrc
+.htpasswd
+auth.json
+
+# =============================================================================
+# NODE / JAVASCRIPT / TYPESCRIPT
+# =============================================================================
+
+node_modules/
+dist/
+build/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+.turbo/
+out/
+coverage/
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+.npm/
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.pnp.*
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
+venv/
+.venv/
+env/
+.env/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+*.egg-info/
+dist/
+build/
+*.egg
+.tox/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# =============================================================================
+# JAVA / KOTLIN
+# =============================================================================
+
+*.class
+*.jar
+*.war
+*.ear
+target/
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+build/
+
+# =============================================================================
+# RUBY
+# =============================================================================
+
+*.gem
+.bundle/
+vendor/bundle
+.byebug_history
+
+# =============================================================================
+# GO
+# =============================================================================
+
+*.exe
+*.test
+*.out
+vendor/
+
+# =============================================================================
+# RUST
+# =============================================================================
+
+target/
+Cargo.lock     # remove this line if publishing a library
+
+# =============================================================================
+# DATABASES & DATA FILES
+# =============================================================================
+
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+dump.sql
+*.sql.gz
+
+# =============================================================================
+# DOCKER / INFRA
+# =============================================================================
+
+.env.docker
+docker-compose.override.yml
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfvars          # may contain secrets
+!terraform.tfvars.example
+.vagrant/
+*.tfplan
+
+# =============================================================================
+# COMPILED / BINARY
+# =============================================================================
+
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# =============================================================================
+# TEMPORARY & MISC
+# =============================================================================
+
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+*.orig
+*.patch
+.cache/
