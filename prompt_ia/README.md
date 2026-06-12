@@ -25,6 +25,8 @@ bloqueios simples. O chatbot atua como interface inteligente entre o morador e a
 infraestrutura GoodWe EV ChargeOps, respondendo essas dúvidas em linguagem natural
 e reduzindo a fricção operacional do dia a dia.
 
+O chatbot atua como interface inteligente entre o morador e a infraestrutura GoodWe EV ChargeOps. Essa integração delimita-se pelo entendimento do ciclo de registro de sessão e a comunicação baseada no protocolo OCPP, garantindo que o assistente compreenda os limites operacionais do que pode ser respondido (como o consumo em kWh enviado pelo carregador) versus o que é restrito ao backend de orquestração de potência (fora de escopo para o usuário final).
+
 ---
 
 ## Persona atendida
